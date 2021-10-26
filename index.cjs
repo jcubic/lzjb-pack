@@ -1,3 +1,7 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /*
  * source https://github.com/copy/jslzjb-k
  * Based on jslzjb: https://code.google.com/p/jslzjb/
@@ -270,4 +274,5 @@ function unpack(input) {
     return out;
 }
 
-export { pack, unpack };
+exports.pack = pack;
+exports.unpack = unpack;

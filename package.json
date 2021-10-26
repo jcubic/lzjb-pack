@@ -1,0 +1,31 @@
+{
+  "name": "lzjb-pack",
+  "version": "0.1.0",
+  "description": "No Dependency fast LZJB Compression for Browser and Node",
+  "module": "./src/lzjb.js",
+  "typings": "./index.d.ts",
+  "main": "./index.cjs",
+  "unpkg": "./index.umd.min.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcubic/lzjb-pack.git"
+  },
+  "keywords": [
+    "compression",
+    "pack"
+  ],
+  "author": "Jakub T. Jankiewicz <jcubic@onet.pl> (https://jcubic.pl/me/)",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/jcubic/lzjb-pack/issues"
+  },
+  "homepage": "https://github.com/jcubic/lzjb-pack#readme",
+  "devDependencies": {
+    "@rollup/plugin-babel": "^5.3.0",
+    "rollup": "^2.58.3",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
