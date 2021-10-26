@@ -1,8 +1,9 @@
 {
   "name": "lzjb-pack",
   "version": "0.1.0",
-  "description": "No Dependency fast LZJB Compression for Browser and Node",
-  "module": "./src/lzjb.js",
+  "description": "No Dependency fast and small LZJB Compression for Node and browser",
+  "module": "./index.js",
+  "type": "module",
   "typings": "./index.d.ts",
   "main": "./index.cjs",
   "unpkg": "./index.umd.min.js",

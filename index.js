@@ -1,3 +1,13 @@
+/**@license
+ *
+ * No Dependency fast LZJB Compression for Browser and Node
+ *
+ * Copyright (c) 2021 Jakub T. Jankiewicz https://jcubic.pl/me
+ * Released under BSD-3-Clause License
+ *
+ * build: Tue, 26 Oct 2021 18:34:12 GMT
+ */
+
 /*
  * source https://github.com/copy/jslzjb-k
  * Based on jslzjb: https://code.google.com/p/jslzjb/
