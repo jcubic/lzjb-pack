@@ -241,27 +241,33 @@ function bytes_to_number(byteArray) {
     return result;
 }
 
-function pack(input) {
+function pack(input, { magic = true } = {}) {
     const out = new Uint8Array(Math.max(input.length * 1.5 | 0, 16 * 1024));
     const len = compress(input, out);
     const len_array = number_to_bytes(input.length);
-    return merge_uint8_array(
-        MAGIC,
+    const payload = [
         Uint8Array.of(len_array.length),
         len_array,
         out.slice(0, len)
-    );
+    ];
+    if (magic) {
+        payload.unshift(MAGIC);
+    }
+    return merge_uint8_array(...payload);
 }
 
-function unpack(input) {
-    const decoder = new TextDecoder('utf-8');
-    const magic = decoder.decode(input.slice(0, MAGIC.length));
-    if (magic !== MAGIC_STRING) {
-        throw new Error('Invalid magic value');
+function unpack(input, { magic = true } = {}) {
+    if (magic) {
+        const decoder = new TextDecoder('utf-8');
+        const magic_prefix = decoder.decode(input.slice(0, MAGIC.length));
+        if (magic_prefix !== MAGIC_STRING) {
+            throw new Error('Invalid magic value');
+        }
     }
-    const size = input[MAGIC.length];
-    const start = MAGIC.length + 1;
-    const end = MAGIC.length + size + 1;
+    const magic_length = magic ? MAGIC.length : 0;
+    const size = input[magic_length];
+    const start = magic_length + 1;
+    const end = magic_length + size + 1;
     const len = bytes_to_number(input.slice(start, end));
     input = input.slice(end);
     const out = new Uint8Array(len);

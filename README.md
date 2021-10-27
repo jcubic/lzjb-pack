@@ -21,7 +21,6 @@ readFile('package.json').then(buffer => {
   writeFile('package.json.lzjb', pack(buffer));
 });
 
-
 ```
 
 Unpacking:
@@ -35,6 +34,13 @@ readFile('package.json.lzjb').then(buffer => {
   writeFile('package-unpack.json', unpack(buffer));
 });
 ```
+
+## API
+
+* `pack(Uint8Array | Buffer, { magic: boolean }): Uint8Array`
+* `unpack(Uint8Array | Buffer, { magic: boolean }): Uint8Array`
+
+if magic option is set to false magic string is not added to the output byte array.
 
 ## License
 
