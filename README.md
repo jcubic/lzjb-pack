@@ -43,6 +43,6 @@ readFile('package.json.lzjb').then(buffer => {
 if magic option is set to false magic string is not added to the output byte array.
 
 ## License
-
-Copyright (c) 2021 [Jakub Jankiewicz](https://jcubic.pl/me)<br/>
+Copyright (c) 2010 Nuwa Information Co., Ltd, and individual contributors.<br/>
+Copyright (c) 2021 [Jakub T. Jankiewicz](https://jakub.jankiewicz.org/)<br/>
 Released under BSD-3-Clause License
